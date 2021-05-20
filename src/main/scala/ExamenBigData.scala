@@ -22,10 +22,14 @@ object ExamenBigData {
     )
 
     val secondeTab  = tab.map(l => {
-      if (l._1.startsWith("https://www.")){ (l._1.substring(12),l._2) }
-      else{ (l._1, l._2)}
+      if (l._1.startsWith("https://www.")){ (l._1.substring(12).split("/")(0),l._2) }
+      else{ (l._1.split("/")(0), l._2)}
     }).foreach(l =>println(l))
   }
+
+
+
+
 
   def main(args: Array[String]): Unit = {
     // test de la fonction
